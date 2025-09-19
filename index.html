@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>IQOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+
+        body{
+            width: 100%;
+            font-family:Noto Sans,Calibri, Arial;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            margin: auto;
+            // background-color:#33303C;
+            background-image: url('Images/bg.png');
+            background-size: 150%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: #34303D;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        p{
+            font-size: 15px;
+        }
+
+        .header{
+            padding: 20px 30px;
+            height: 35px;
+        }
+
+        .header img{
+            height: 35px;
+            color: #ffffff;
+        }
+
+        .main-content{
+            text-align: center;
+        }
+
+        .main-text{
+            width: 500px;
+            margin: 0 auto 50px;
+        }
+
+        .main-text h1{
+            margin: 15px 0 30px;
+            font-size: 60px;
+        }
+
+        .main-text span{
+            font-size: 30px;
+        }
+
+        .main-code{
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .main-code form > *{
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .main-code label{
+            font-size: 20px;
+        }
+
+        .main-code input{
+            height: 60px;
+            width: 350px;
+            padding: 15px 30px;
+            margin-bottom: 70px;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            background: transparent;
+            color: white;
+            font-size: 45px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .input-container{
+            position: relative;
+        }
+
+        .err-msg{
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 35px;
+            color: #00D1D2;
+        }
+
+        .err-msg.active{
+            display: block;
+        }
+
+        .main-code button{
+            width: 400px;
+            padding: 20px 30px;
+            background: #00D1D2;
+            border: 0;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 300ms ease-out;
+        }
+
+        .main-code button:hover{
+            opacity: .8;
+        }
+
+        .ghw{
+            padding: 20px;
+            margin: auto;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #34303D;
+        }
+
+        .ghw-container{
+            position: relative;
+            padding: 20px;
+            border: 2px solid #ffffff;
+        }
+
+        .ghw-container img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin: auto;
+            height: 50px;
+            vertical-align: middle;
+            color: #ffffff;
+        }
+
+        .ghw-container span{
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .ghw-mobile{
+            display: none;
+            width: 100%;
+        }
+       
+        /* Portrait Phone */
+        @media (max-width: 575px){
+            .header img{
+                height: 25px;
+            }
+
+            .container{
+                background-size: 300%;
+            }
+
+            .main-text{
+                width: 300px;
+            }
+
+            .main-text h1{
+                margin: 15px 0 25px;
+                font-size: 40px;
+            }
+
+            .main-text span{
+                font-size: 20px;
+            }
+            
+            .main-code{
+                width: 300px;
+            }
+
+            .main-code label{
+                font-size: 15px;
+            }
+
+            .main-code input{
+                width: 280px;
+                height: 40px;
+                padding: 15px 5px;
+                font-size: 30px;
+            }
+            
+            .main-code button{
+                width: 280px;
+                padding: 15px 5px;
+                font-size: 20px;
+            }
+
+            .ghw{
+                padding: 0;
+            }
+
+            .ghw-container{
+                display: none;
+            }
+
+            .ghw-mobile{
+                display: block;
+            }
+        }
+
+        /* Landscape Phone */
+        @media (max-width: 767px){
+            
+        }
+
+        /* Tablet */
+        @media (max-width: 991px){
+
+        }
+    </style>
+</head>
+
+
+<body style="font-family:Noto Sans,Calibri, Arial;">
+    <div class="container">
+
+        <div class="header">
+            <img align="left" alt="IQOS Indonesia" src="Images/iqos_logo.png">
+            <img align="right" alt="IQOS Club" src="Images/iqos_club.png">
+        </div>
+
+        <div class="main-content">
+            <div class="main-text">
+                <h1><strong>Hi</strong></h1>
+                <span><strong>Enter your unique code.</strong></span><br>
+                <span>Use the unique code from our official Telegram message.</span>
+            </div>
+            <div class="main-code">
+                <form name="codeForm" action="#" onsubmit="return submitCode()">
+                    <label for="code-input">Your Code</label>
+                    <div class="input-container">
+                        <input type="text" id="code-input" name="code" required>
+                        <span id="err" class="err-msg">Invalid Code!</span>
+                    </div>
+                    <button type="submit">
+                        Let's Start Playing
+                        <!--<img align="center" alt="Let's Start Playing" src="Images/cta_button_en.png">-->
+                    </button>
+                </form>
+            </div>
+        </div>
+         
+        <div class="ghw">
+            <div class="ghw-container">
+                <img alt="21+" src="Images/21_logo.png">
+                <span>
+                    This product is not risk-free and provides nicotine, which is addictive. Only for use by adults (21+).<br>
+                    Prohibited from selling and giving to persons under 21 years of age and pregnant women.
+                </span>
+            </div>
+            <img align="center" class="ghw-mobile" alt="Health Warning" src="Images/hw_iqos_dark_en.png">
+        </div>
+        
+    </div>
+    <script>
+        document.addEventListener("keydown", cleanErr, false);
+
+        function cleanErr(){
+            const errmsg = document.getElementById("err");
+            errmsg.classList.remove("active");
+        }
+        
+        function submitCode(){
+            var code = document.forms["codeForm"]["code"].value;
+            if (code.toLowerCase() !== "comcon2025") {
+                const errmsg = document.getElementById("err");
+                errmsg.classList.add("active");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
