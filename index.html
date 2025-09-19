@@ -11,16 +11,29 @@
 
     <style type="text/css">
 
+        @font-face {
+            font-family: 'IQOS';
+            src: url('Fonts/IQOS-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'IQOS';
+            src: url('Fonts/IQOS-Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         body{
             width: 100%;
-            font-family:Noto Sans,Calibri, Arial;
+            font-family: 'IQOS',Noto Sans,Calibri, Arial;
             padding: 0;
             margin: 0;
         }
 
         .container{
             margin: auto;
-            // background-color:#33303C;
             background-image: url('Images/bg.png');
             background-size: 150%;
             background-position: center center;
@@ -54,7 +67,7 @@
         }
 
         .main-text h1{
-            margin: 15px 0 30px;
+            margin: 15px 0 25px;
             font-size: 60px;
         }
 
@@ -81,7 +94,7 @@
             height: 60px;
             width: 350px;
             padding: 15px 30px;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             border: 1px solid #ffffff;
             border-radius: 10px;
             background: transparent;
@@ -100,7 +113,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 35px;
+            bottom: 20px;
             color: #00D1D2;
         }
 
@@ -110,11 +123,12 @@
 
         .main-code button{
             width: 400px;
-            padding: 20px 30px;
+            padding: 15px 30px;
             background: #00D1D2;
             border: 0;
             border-radius: 50px;
             color: #ffffff;
+            font-family: inherit;
             font-size: 25px;
             font-weight: bold;
             cursor: pointer;
@@ -234,7 +248,7 @@
 </head>
 
 
-<body style="font-family:Noto Sans,Calibri, Arial;">
+<body style="font-family:'IQOS',Noto Sans,Calibri, Arial;">
     <div class="container">
 
         <div class="header">
